@@ -1,0 +1,56 @@
+{% extends 'main/shablon.html' %}
+
+{% block title %}
+Задача
+{% endblock %}
+
+{% block content %}
+    <div class="detail-description">
+        <h3>{{object.name}}</h3>
+        <h5>{{object.description}}</h5>
+    </div>
+
+    <div class="detailalltaskcenter">
+        {% for el in object.task_set.all %}
+            <div class="hr-task"></div>
+            <div class="detail-description-task">
+                <h5>{{el.name}}</h5>
+                <div>{{el.condition}}</div>
+                {% if is_author %}
+                    {{el.answer}}
+                {% endif %}
+                <input>
+                <span class="otvet"></span>
+            </div>
+
+        {% endfor %}
+    </div>
+
+    {% if object.task_set.all %}
+        <button id="switch">проверить</button>
+    {% endif %}
+    <br>
+    <span id="p1"></span>
+
+
+    {% if is_author %}
+        <a href="{% url 'tasks_edit' object.id %}"><span>Изменить</span></a>
+    {% endif %}
+
+
+    <script>
+        var a = document.getElementById('switch');
+        a.onclick = function() {
+            const js_answers = Array.from(document.querySelectorAll('input'), v=> v.value);
+            if (JSON.stringify({{ array| safe }}) === JSON.stringify(js_answers)) {
+                document.getElementById("p1").innerHTML = "Тест решен верно";
+                document.getElementById("p1").style.color="green";
+            } else {
+                document.getElementById("p1").innerHTML = "Тест решен неверно";
+                document.getElementById("p1").style.color="red";
+            }
+
+        }
+    </script>
+{% endblock %}
+

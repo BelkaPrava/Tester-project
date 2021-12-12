@@ -1,0 +1,24 @@
+{% extends 'main/shablon.html' %}
+
+{% block title %}
+    Создание модуля
+{% endblock %}
+
+{% block content %}
+    <form class="module-form" method="POST" action=".">
+        {% csrf_token %}
+        <div class="form-row-module">
+            <label for="task-form-name">Название модуля</label><br>
+            {{ form.name }}
+        </div>
+        <div class="form-row-module">
+            <label for="task-form-description">Описание модуля</label><br>
+            {{ form.description }}
+        </div>
+        <div>
+            <span>Сделать модуль публичным?</span>
+            {{ form.is_public }}
+        </div>
+        <br><button type="submit">Создать</button>
+    </form>
+{% endblock %}

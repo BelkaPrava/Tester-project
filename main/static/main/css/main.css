@@ -1,0 +1,301 @@
+/*--------------------Навигационное меню--------------------*/
+
+.navbar {
+    background: #30e3ca;
+    width: 100%;
+    height: 70px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, .1);
+    position: fixed;
+    z-index: 999999;
+}
+
+.navbar .container {
+    height: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-menu {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.navbar-menu li {
+    display: inline-block;
+}
+
+.navbar-menu li a {
+    display: inline-block;
+    color: black;
+    opacity: 0.7;
+    text-decoration: none;
+    padding: 10px;
+    transition: all .07s ease-in-out;
+}
+
+.navbar-menu li a:hover {
+    opacity: 1;
+}
+
+.navbar-wrap {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.callback {
+    margin-left: 150px;
+    padding: 10px 50px;
+    background-color: coral;
+    border-radius: 100px;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 9px 9px rgba(255, 127, 80, .2)
+    transition: all 5s ease-in-out;
+}
+
+.callback:hover {
+    color: white;
+    transform: scale(1.01);
+    box-shadow: 0 5px 5px rgba(255, 127, 80, .2)
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 26px;
+    text-decoration: none;
+    color: black;
+    transition: all .07s ease-in-out;
+}
+
+.navbar-brand:hover {
+    color: coral;
+}
+
+/*--------------------Основной контент--------------------*/
+.main-content-css {
+    text-align: center;
+    height: 100vh;
+    weight: 100vh;
+    padding-top: 100px;
+}
+
+body {
+	position: relative;
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 16px;
+	line-height: 1.4;
+
+	min-width: 320px;
+	overflow-x: hidden;
+	height: auto;
+	background: #a6e3e9;
+}
+
+/*--------------------Login--------------------*/
+.form-row-login {
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+.form-row-login input {
+    float: right;
+    height: 20px;
+    line-height: 20px;
+    padding: 0px 5px;
+    width: 290px;
+    border: 1px solid #ABADB3;
+}
+.log-form {
+    width: 400px;
+    margin: 70px auto;
+}
+h2 {
+    text-align: center;
+}
+.form-row-login input[type=submit] {
+    padding: 5px;
+    height: 25px;
+    width: 100px;
+    line-height: 10px;
+    background: #337AB7;
+    color: white;
+    float: left;
+}
+.form-row-login input[type=submit]:hover {
+    background: #286090;
+}
+
+.form-row-login label {
+    float: left;
+}
+
+/*--------------------Registration--------------------*/
+.reg-form {
+    width: 500px;
+    margin: 70px auto;
+}
+
+.form-row-login input[type=submit] {
+    padding: 5px;
+    height: 25px;
+    width: 200px;
+    line-height: 10px;
+    background: #337AB7;
+    color: white;
+    float: left;
+}
+.form-row-login input[type=submit]:hover {
+    background: #286090;
+}
+
+/*--------------------Module--------------------*/
+.module-create-form-area {
+    width: 500px;
+    height: 300px;
+    resize: none;
+    margin: 3px 0 13px 0;
+
+}
+
+.module-create-form {
+    width: 500px;
+    margin: 3px 0 13px 0;
+
+}
+
+.module-form {
+    margin: 50px 0 50px 0;
+    text-align: center;
+}
+
+/*--------------------TaskMain--------------------*/
+.taskk-create-form-area {
+    width: 450px;
+    height: 300px;
+    resize: none;
+    margin: 3px 0 13px 0;
+
+}
+
+.taskk-create-form {
+    width: 450px;
+    margin: 3px 0 13px 0;
+}
+.post-item {
+    padding: 15px;
+    cursor: pointer;
+    margin: 0 30% 0 30%;
+}
+
+.post-item p {
+    word-wrap: break-word;
+}
+.post-item h3 {
+    word-wrap: break-word;
+}
+
+.post-item * {
+    transition: .3s linear;
+}
+
+.item-content {
+    background: #3ec1d3;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.post-item:hover .item-body h3, .post-item:hover .item-body p {
+    transform: translateY(-8px);
+}
+
+.item-body {
+    color: black;
+    font-size: 14px;
+}
+
+.item-body h3 {
+    font-weight: 500;
+    margin-bottom: 15px;
+    transition-delay: .05s;
+}
+
+.item-body p {
+    transition-delay: .1s;
+}
+
+.item-footer {
+    padding-top: 15px;
+}
+
+.link {
+    text-decoration: none;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    padding-right: 30px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: black;
+}
+
+.link:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    height: .125rem;
+    margin: auto;
+    background: black;
+    transform: scaleX(.2);
+    transform-origin: left center;
+    z-index: 0;
+    transition: .6s cubic-bezier(.6, .01, 0, 1);
+}
+.link:hover {
+    color:black;
+}
+
+.link span {
+    display: inline-block;
+    position: relative;
+    transform: translateX(-200%);
+    transition: .6s cubic-bezier(.6, .01, 0, 1);
+}
+
+.post-item:hover .link span {
+    transform: translateX(0%);
+}
+
+.post-item:hover .link:before {
+    transform-origin: right center;
+}
+/*Detail-tasks*/
+.detail-description {
+    width: 700px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    height: auto;
+}
+.detail-description h5 {
+    text-overflow: ellipsis;
+    text-align: center;
+}
+.detail-description-task {
+    margin: 50px 0 0 0;
+    width: 500px;
+}
+
+.detailalltaskcenter {
+    text-align: center;
+    padding: 0 25% 0 25%;
+}
+
+.hr-task {
+    border-bottom: solid 2px coral;
+    margin-top: 50px;
+}
+

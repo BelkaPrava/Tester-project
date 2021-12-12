@@ -1,0 +1,22 @@
+{% extends 'main/shablon.html' %}
+
+
+{% block title %}
+Публичные задания
+{% endblock %}
+
+{% block content %}
+    {% for el in object %}
+        <div class="post-item">
+            <div class="item-content">
+                <div class="item-body">
+                    <h3>{{el.name}}</h3>
+                    <p>{{el.description}}</p>
+                </div>
+                <div class="item-footer">
+                    <a href="{% url 'tasks_det' el.id%}" class="link"><span>Подробнее</span></a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

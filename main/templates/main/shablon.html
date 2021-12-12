@@ -1,0 +1,42 @@
+{% load static %}
+
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="{% static 'main/libs/bootstrap-grid.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/libs/bootstrap-reboot.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <script src="https://unpkg.com/htmx.org@1.5.0"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="{% url 'home' %}" class="navbar-brand">Test&Er</a>
+            <div class="navbar-wrap">
+                <ul class="navbar-menu">
+                    {% if request.user.is_authenticated %}
+                    <li><a href="{% url 'create_tasks' %}">Создать тест</a></li>
+                    {% endif %}
+                    <li><a href="{% url 'tasks_home' %}">Публичные задания</a></li>
+                    {% if not request.user.is_authenticated %}
+                    <li><a href="{% url 'login' %}">Войти</a><li>
+                    {% else %}
+                    <li><a href="{% url 'profile' %}">Профиль</a><li>
+                    <li><a href="{% url 'logout' %}">Выход</a><li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="main-content-css">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
